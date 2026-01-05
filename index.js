@@ -4,7 +4,7 @@ function changeBackgroundColor() {
 }
 
 function resetBackgroundColor() {
-  document.body.style.backgroundColor = "white";
+  document.body.style.backgroundColor = "";
 }
 
 // ===== Capture Keyboard Input =====
@@ -29,8 +29,8 @@ function setupEventListeners() {
   const changeBtn = document.getElementById("changeColorButton");
   if (changeBtn) changeBtn.addEventListener("click", changeBackgroundColor);
 
-  // Reset on body double-click (not button double-click)
-  document.body.addEventListener("dblclick", resetBackgroundColor);
+  const resetBtn = document.getElementById("resetColorButton");
+  if (resetBtn) resetBtn.addEventListener("dblclick", resetBackgroundColor);
 
   document.addEventListener("keydown", displayKeyPress);
 
